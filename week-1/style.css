@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  color: #2f3640;
+  /* border: 1px solid black; */
+}
+
+/*==========================
+  Header
+==========================*/
+header {
+  display: flex;
+  align-items: center;
+  background-color: #fff9f0;
+}
+
+.logo {
+  flex: 5 1 400px;
+}
+
+.logo img {
+  width: 15vmin;
+  margin: 0.25rem 1rem;
+}
+
+nav {
+  flex: 3 1 400px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 3vmin;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  color: #ed4c67;
+}
+
+.menu img {
+  display: none;
+}
+
+.welcomemsg {
+  background: url("/img/bg-body.gif") repeat;
+  height: 30vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.welcomemsg h1 {
+  font-size: 8vmin;
+  font-style: italic;
+}
+
+/*==========================
+  main
+==========================*/
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h2 {
+  font-size: 5vmin;
+  color: #273c75;
+  font-style: italic;
+  margin-top: 4vmin;
+  margin-bottom: 2vmin;
+}
+
+.character {
+  display: flex;
+  border-radius: 10px;
+  background-color: #dcdde1;
+  align-items: center;
+  margin: 1rem 1rem 0 1rem;
+  padding-right: 0.5rem;
+}
+
+.character img {
+  border-radius: 50%;
+  width: 20vmin;
+  height: 20vmin;
+  padding: 0.75rem;
+}
+
+.pro h4 {
+  font-size: 4vmin;
+  padding-left: 1vmin;
+  margin-bottom: 0.5rem;
+}
+.pro p {
+  font-size: 2vmin;
+  padding-left: 1vmin;
+}
+
+.btn {
+  margin-top: 8vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn a {
+  text-decoration: none;
+  background-color: #c7ecee;
+  border-radius: 5px;
+  padding: 1.5vmin 2.5vmin;
+  font-size: 3vmin;
+  font-weight: 600;
+  color: #273c75;
+}
+
+/*==========================
+  media query
+==========================*/
+
+@media (min-width: 500px) {
+  .container {
+    display: flex;
+  }
+  .character {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    display: none;
+  }
+  .menu img {
+    display: flex;
+    width: 10vmin;
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 80%;
+    max-width: 1200px;
+  }
+}
