@@ -150,6 +150,6 @@ main {
 @media screen and (min-width: 1200px) {
   .container {
     width: 80%;
-    max-width: 1200px;
+    width: 1200px;
   }
 }
