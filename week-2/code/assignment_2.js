@@ -1,40 +1,44 @@
 //First Way
-function cal(n1,n2){
-    this.n1 = n1;
-    this.n2 = n2;
+let math = {}
 
-    this.add = function(){
-        console.log(Number(this.n1)+Number(this.n2));
+function calculate(args){
+    let result;
+    if(args.op === "+"){
+        result = Number(args.n1)+Number(args.n2);
+    } else if(args.op === "-"){
+        result = Number(args.n1)-Number(args.n2);
+    }else{
+        result = "Not supported";
     }
-    this.minus = function(){
-        console.log(Number(this.n1)-Number(this.n2));
-    }
+    console.log(result);
 }
 
-const test1 = new cal(5,3);
-test1.add();
-test1.minus();
+calculate({n1:15,n2:2,op:"-"});
+
+
+
 
 //Second Way
-class Calculate{
+class Math{
 
     constructor(n1, n2, op){
         this.n1 = n1;
         this.n2 = n2;
         this.op = op;
     }
-
-    math(){
-        if(this.op === "+"){
-            console.log(Number(this.n1)+Number(this.n2));
-        } else if(this.op === "-"){
-            console.log(Number(this.n1)-Number(this.n2));
-        }else{
-            console.log("Not supported");
-        }
-    }
 }
 
-const test2 = new Calculate(7,2,"+");
-test2.math();
+function calculate(args){
+    let result;
+    if(args.op === "+"){
+        result = Number(args.n1)+Number(args.n2);
+    } else if(args.op === "-"){
+        result = Number(args.n1)-Number(args.n2);
+    }else{
+        result = "Not supported";
+    }
+    console.log(result);
+}
 
+const test2 = new Math(7,2,"+");
+calculate(test2);
