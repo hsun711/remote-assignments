@@ -1,6 +1,9 @@
 const express = require('express');
 const adding = require('./add');
+const cookieParser = require("cookie-parser");
+
 const app = express();
+app.use(cookieParser());
 
 
 //Assignment 1
@@ -27,6 +30,22 @@ app.get("/getData", (req, res) => {
 app.use(express.static("public"));
 
 
+//Assignment 4
+app.get("/myName", (req, res) => {
+    res.sendFile(__dirname + "/myName.html");  
+    console.log(req.cookies.name);
+})
+
+app.get("/trackName", (req, res) => {
+    let username = req.query;
+    res.cookie("name", username.name);
+    res.redirect("myName");
+})
+
+
+
+
 app.listen(3000, () => {
     console.log("The server is running on localhost:3000!");
 });
+
