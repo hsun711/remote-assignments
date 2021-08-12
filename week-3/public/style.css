@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #81ecec;
+  color: #2d3436;
+}
+
+div {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
