@@ -13,15 +13,15 @@ app.get("/", (req, res) => {
 
 //Assignment 2
 app.get("/getData", (req, res) => {
-    const {number} = req.query;
+    const { number } = req.query;
     const result = adding.add(number);
     const reg = /^[0-9]+$/g;
 
-    if(number == null){
+    if (number == null) {
         res.send("<h1>Lack of Parameter</h1>");
-    } else if(!reg.test(number)){
+    } else if (!reg.test(number)) {
         res.send("<h1>Wrong Parameter</h1>");
-    } else{
+    } else {
         res.send(`<h1>${result}</h1>`);
     }
 });
@@ -31,16 +31,29 @@ app.use(express.static("public"));
 
 
 //Assignment 4
+
 app.get("/myName", (req, res) => {
-    res.sendFile(__dirname + "/myName.html");  
-    console.log(req.cookies.name);
+    res.sendFile(__dirname + "/myName.html");
+    const user = req.cookies;
+    
+    if(user.name === undefined){
+        res.sendFile(__dirname + "/myName.html");
+    } else{
+        res.send(`${user.name}`);
+    }
+    console.log(user);
 })
 
 app.get("/trackName", (req, res) => {
-    let username = req.query;
-    res.cookie("name", username.name);
-    res.redirect("myName");
+    const { name } = req.query;
+    res.cookie("name", name);
+    res.redirect("/myName");
 })
+
+
+
+
+
 
 
 
